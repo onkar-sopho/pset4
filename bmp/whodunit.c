@@ -91,6 +91,62 @@ int main(int argc, char* argv[])
               triple.rgbtBlue = 0xff;
             } 
             
+            if (triple.rgbtRed > 225 && triple.rgbtRed < 250)
+            {
+              triple.rgbtRed = 240;
+              triple.rgbtGreen = 240;
+              triple.rgbtBlue = 240;
+            }
+            
+           else if (triple.rgbtRed > 200 && triple.rgbtRed < 225)
+            {
+              triple.rgbtRed = 225;
+              triple.rgbtGreen = 225;
+              triple.rgbtBlue = 225;
+            }
+            
+           else if (triple.rgbtRed > 175 && triple.rgbtRed < 200)
+            {
+              triple.rgbtRed = 125;
+              triple.rgbtGreen = 125;
+              triple.rgbtBlue = 125;
+            }
+            
+           else if (triple.rgbtRed > 150 && triple.rgbtRed < 175)
+            {
+              triple.rgbtRed = 60;
+              triple.rgbtGreen = 60;
+              triple.rgbtBlue = 60;
+            }
+            
+            else if (triple.rgbtRed > 125 && triple.rgbtRed < 150)
+            {
+              triple.rgbtRed = 50;
+              triple.rgbtGreen = 50;
+              triple.rgbtBlue = 50;
+            }
+            
+            else if (triple.rgbtRed > 100 && triple.rgbtRed < 125)
+            {
+              triple.rgbtRed = 50;
+              triple.rgbtGreen = 50;
+              triple.rgbtBlue = 50;
+            }
+            
+            else if (triple.rgbtRed > 50 && triple.rgbtRed < 100)
+            {
+              triple.rgbtRed = 15;
+              triple.rgbtGreen = 15;
+              triple.rgbtBlue = 15;
+            }
+            
+            else if (triple.rgbtRed > 0 && triple.rgbtRed < 50)
+            {
+              triple.rgbtRed = 0;
+              triple.rgbtGreen = 0;
+              triple.rgbtBlue = 0;
+            } 
+            
             // write RGB triple to  verdict file
             fwrite(&triple, sizeof(RGBTRIPLE), 1, verdict_ptr);
         }
