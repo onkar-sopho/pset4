@@ -1,0 +1,105 @@
+0.  How many different colors does each format support?
+
+=>      BMP: 32 bits per pixel, 4 billion colors
+	    GIF: 8 bits per pixel, 256 colors
+	    JPEG: 24 bits per pixel, 16 million colors
+        PNG: 24 bit per pixel, 16 million colors
+
+1.  Which of the formats supports animation?  
+   
+=>      GIF
+
+2.  What’s the difference between lossy and lossless compression?
+  
+=>      Lossless and lossy compression are terms that describe whether or not,
+        in the compression of a file, all original data can be recovered when 
+        the file is uncompressed. With lossless compression, every single bit 
+        of data that was originally in the file remains after the file is 
+        uncompressed. All of the information is completely restored. 
+        
+        On the other hand, lossy compression reduces a file by permanently
+        eliminating certain information, especially redundant information. 
+        When the file is uncompressed, only a part of the original information
+        is still there.
+
+3.  Which of these formats is lossy-compressed?
+
+=>      JPEG
+        
+4.  What happens, technically speaking, when a file is deleted on a FAT file system?
+
+=>      The system modifies the filename's first character to signal that it has
+        been deleted. The system moves all of the file's FAT clusters to the hard drive's list
+        of free clusters.
+
+5.  What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+       
+=>      Write random characters to every address on the disk. There's consensus
+        that "overwriting a disk with a few random passes" is sufficient.
+
+6.  What’s stdint.h?
+
+=>      stdint.h is a header file in the C standard library to allow programmers to write more portable code
+        by providing a set of typedefs that specify exact-width integer types, together with the defined minimum and maximum allowable values for each type, using macros
+        
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+
+=>      Using these types allows us to write implementation- and plattform-independent code.
+        So using this we can fill up exactly the amount of space we want in a file which is good
+        for things like bitmap headers.
+
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+
+=>      BYTE  : 1
+        DWORD : 4
+        LONG  : 4
+        WORD  : 2
+
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? (Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+
+=>      The first 2 bytes of the BMP file format are the character "B" then the
+        character "M" in ASCII encoding. The header field used to identify the BMP
+        file is 0x42 0x4D in hexadecimal, same as BM in ASCII. This value is stored in "bfType".
+
+10. What’s the difference between bfSize and biSize?
+
+=>      bfSize describes the entire file size in bytes, whereas biSize is the
+        size of BITMAPINFOHEADER in bytes.
+ 
+11. What does it mean if biHeight is negative?
+
+=>      If biHeight is negative, the bitmap is a top-down DIB and its origin
+        is the upper-left corner.
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+
+=>      biBitCount.
+
+13. Why might fopen return NULL in copy.c:37?
+
+=>      fopen will return null if it cannot open the file. This can happen if there is not enough
+        memory or the file cannot be found or if the user running the copy programm has no write
+        permission for the directory he/she wants to copy the file to.
+
+14. Why is the third argument to fread always 1 in our code?
+
+=>      The third argument determines the number of elements fread will read. So this argument is
+        always 1 because we are always reading struct so we only need 1 struct.  We want to copy one individual structure per read
+
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+
+=>      The padding will be 3.
+        
+16. What does fseek do?
+
+=>      The fseek() function is used to set the file position
+        indicator for the stream to a new position
+
+17. What is SEEK_CUR?
+
+=>      SEEK_CUR is an option used in fseek to set the offset relative to
+        the current pointer position.
+
+18. TODO
+        
+
